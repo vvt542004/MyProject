@@ -1,0 +1,327 @@
+/*Trungtam.html
+*/
+.car-tt {
+    margin-top: 70px;
+}
+
+.car-tt-items {
+    display: flex;
+
+}
+
+.car-tt-item img {
+    width: 600px;
+    height: 330px;
+}
+
+.car-tt-item:nth-child(2) {
+    margin-left: 30px;
+}
+
+.car-tt-item ul li {
+    padding: 5px 0px;
+    font-family: 'Arial Narrow';
+    font-size: 17px;
+
+
+}
+
+.car-tt-item ul li:nth-child(1) {
+    font-size: 25px;
+
+}
+
+.car-tt-item ul li:nth-child(2) {
+    margin-top: 5px;
+}
+
+.car-tt-item ul li:nth-child(2):hover {
+    color: red;
+    cursor: pointer;
+}
+
+.car-tt-item ul li:nth-child(3) {
+    padding: 10px 0px;
+}
+
+.car-tt-item ul li:nth-child(3) span:hover {
+    color: red;
+    cursor: pointer;
+
+}
+
+.car-tt-item ul li:nth-child(4) {
+    font-weight: bold;
+    margin-top: 5px;
+
+}
+
+.car-tt-item ul li:nth-child(5) span:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.car-tt-item ul li:nth-child(6) span:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.car-tt-item ul li:nth-child(7) span:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.car-tt-item ul li:nth-child(8) span:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.car-tt-item ul li:nth-child(9) {
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+.car-tt-item ul li:nth-child(13) {
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+.car-tt-item button {
+    background-color: rgb(57, 57, 57);
+    height: 40px;
+    width: 120px;
+    color: white;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    align-items: center;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.car-tt-item button:hover {
+    background-color: rgb(158, 5, 5);
+
+}
+
+.car-tt-item button:hover i {
+    color: white;
+
+}
+
+.car-tt-item button i {
+    color: rgb(158, 5, 5);
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+/*Trung tam sg*/
+.tt-sg-conten {
+    margin-top: 0px;
+
+
+
+}
+
+.tt-sg-subconten {
+    height: 75px;
+    background-color: rgb(43, 43, 43);
+    color: white;
+
+}
+
+.tt-sg-subconten ul {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.tt-sg-subconten ul li {
+    font-family: 'Arial Narrow';
+    font-size: 20px;
+    margin-top: 25px;
+    padding: 0px 30px;
+
+
+}
+
+.tt-sg-subconten ul li:hover {
+    background-color: rgb(57, 56, 56);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+
+}
+
+.tt-sg-container {
+    margin-top: 150px;
+}
+
+.tt-sg-text {
+    font-size: 30px;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+}
+
+.tt-sg-items {
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.tt-sg-item:hover {
+    cursor: pointer;
+}
+
+.tt-sg-item-text {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    color: white;
+
+}
+
+.tt-sg-item-text li {
+    font-size: 25px;
+    font-family: 'Arial Narrow';
+}
+
+
+
+.tt-sg-item-text ul {
+    display: flex;
+
+}
+
+.tt-sg-item img {
+    width: 508px;
+    height: 400px;
+    border-radius: 20px;
+
+}
+
+.tt-sg-car {
+    margin-top: 150px;
+}
+
+.tt-sg-kp {
+    margin-top: 150px;
+}
+
+.tt-sg-kp-items {
+    display: flex;
+    justify-content: left;
+    margin-top: 50px;
+}
+
+
+.tt-sg-kp-item img {
+    width: 306px;
+    height: 230px;
+    border-radius: 10px;
+
+}
+
+.tt-sg-kp-item li {
+
+    margin-top: 30px;
+    font-size: 25px;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+}
+
+.tt-sg-kp-item button {
+    margin-top: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+}
+
+.tt-sg-kp-item button:hover {
+    background-color: rgb(186, 185, 185);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/*Trung tam sai gon tin tuc*/
+.tt-sg-ttsk-all {
+    display: flex;
+    justify-content: left;
+}
+
+.tt-sg-ttsk {
+    margin-top: 150px;
+
+}
+
+.tt-sg-ttsk-img:hover {
+    cursor: pointer;
+}
+
+.tt-sg-ttsk-img {
+    margin-top: 50px;
+    position: relative;
+    width: 400px;
+    height: 600px;
+    font-family: 'Arial Narrow';
+}
+
+.tt-sg-ttsk-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.tt-sg-ttsk-text {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+    color: white;
+
+    margin-left: 10px;
+}
+
+.tt-sg-ttsk-text ul li {
+    padding: 10px 0px;
+    font-size: 17px;
+}
+
+.tt-sg-ttsk-text ul li:nth-child(1) {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tt-sg-ttsk-text ul li button {
+    background-color: rgb(57, 57, 57);
+    height: 40px;
+    width: 150px;
+    color: white;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    align-items: center;
+    border-radius: 4px;
+    margin-top: 20px;
+    border: 1px solid white;
+
+}
+
+.tt-sg-ttsk-text ul li button:hover {
+    background-color: rgb(70, 70, 70);
+    border: none;
+    transition: all 0.5s ease;
+}
+
+.tt-sg-ttsk-text ul li button i {
+    margin-right: 10px;
+}

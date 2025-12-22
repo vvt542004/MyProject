@@ -1,0 +1,165 @@
+/*XEMOI.HTML */
+.newcar-overhead {
+    width: 100%;
+    height: 130px;
+    background-color: rgb(240, 239, 239);
+
+}
+
+.overhead-text p {
+    margin-left: 200px;
+    font-family: 'Arial Narrow';
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+.overhead-menu {
+    margin-left: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    width: 20px;
+
+}
+
+.overhead-menu p i {
+    background-color: rgb(158, 5, 5);
+    color: white;
+    padding: 20px 20px;
+    display: inline-block;
+    border-radius: 2px;
+
+
+
+}
+
+.overhead-menu i:hover {
+    background-color: rgb(57, 57, 57);
+    color: rgb(158, 5, 5);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: rgb(57, 57, 57);
+    min-width: 300px;
+    z-index: 1000;
+}
+
+.dropdown-menu :hover {
+    background-color: rgb(158, 5, 5);
+
+}
+
+
+.overhead-menu:hover .dropdown-menu {
+    display: block;
+    cursor: pointer;
+}
+
+.menu-item {
+
+    font-size: 17px;
+    font-weight: 100;
+    font-family: 'Arial Narrow';
+    padding: 12px;
+    color: white;
+    border-bottom: 1px solid #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item span {
+    font-size: 15px;
+
+}
+
+/*newcar-content*/
+.newcar-contents {
+    margin-top: 70px;
+    margin-left: 200px;
+    margin-right: 450px;
+
+}
+
+.newcar-content {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.newcar-content-one img {
+
+    cursor: pointer;
+
+}
+
+.newcar-content-one-top img {
+    height: 185px;
+    width: 280px;
+    cursor: pointer;
+
+}
+
+.newcar-content-one-bottum img {
+    height: 185px;
+    width: 280px;
+    margin-top: 20px;
+
+}
+
+
+.newcar-content-two ul {
+    margin-left: 80px;
+
+}
+
+.newcar-content-two ul hr {
+    width: 600px;
+
+}
+
+.newcar-content-two ul li {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    padding: 10px 0;
+
+}
+
+.newcar-content-two ul li i {
+    color: red;
+}
+
+.newcar-content-two ul li:nth-child(1) {
+    font-size: 25px;
+
+}
+
+.newcar-content-two ul li:nth-child(1):hover {
+    color: red;
+    cursor: pointer;
+}
+
+.newcar-content-two-show button {
+    height: 50px;
+    width: 128px;
+    background-color: rgb(51, 50, 50);
+    color: white;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+.newcar-content-two-show button:hover {
+    background-color: red;
+    border: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}

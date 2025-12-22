@@ -1,0 +1,257 @@
+/*Cart*/
+.success-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #16a34a;
+    /* xanh thành công */
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    animation: slideIn 0.4s ease;
+}
+
+/* Animation vào */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*bang cart*/
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cart-table thead {
+    background: #f5f5f5;
+    font-weight: bold;
+}
+
+.cart-img {
+    width: 120px;
+    border-radius: 8px;
+}
+
+.qty-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.qty-form input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+}
+
+.btn-update {
+    padding: 6px 10px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-update:hover {
+    background: black;
+}
+
+.btn-delete {
+    padding: 6px 12px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background: darkred;
+}
+
+.price-bold {
+    font-weight: bold;
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 2px solid #eee;
+}
+
+.cart-summary-left .btn-back {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}
+
+.cart-summary-left .btn-back:hover {
+    color: #000;
+}
+
+.cart-summary-right {
+    text-align: right;
+}
+
+.total-row {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.total-row strong {
+    color: #d60000;
+    font-size: 24px;
+}
+
+.btn-checkout {
+    background: red;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.btn-checkout:hover {
+    background: darkred;
+}
+
+/*Thong tin khách hàng*/
+.cart-wrapper {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 30px;
+}
+
+.cart-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #eee;
+}
+
+.cart-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.cart-img {
+    width: 90px;
+    border-radius: 8px;
+}
+
+.qty-form {
+    display: flex;
+    gap: 6px;
+}
+
+.qty-form input {
+    width: 60px;
+    padding: 6px;
+}
+
+.btn-update,
+.btn-delete {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-update {
+    background: #222;
+    color: #fff;
+}
+
+.btn-delete {
+    background: #e53935;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #000, #444);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 15px;
+    color: #555;
+    text-decoration: none;
+}
+
+.qty-box input {
+    width: 70px;
+    padding: 6px;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}

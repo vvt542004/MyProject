@@ -1,0 +1,131 @@
+/*Ve StoreAG*/
+.StoreAG-texts {
+    margin-top: 40px;
+}
+
+.StoreAG-text ul {
+    margin-right: 400px;
+
+
+}
+
+.StoreAG-text ul li {
+    padding: 10px;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+}
+
+.tt-sk {
+    margin-top: 40px;
+}
+
+.tt-sk-items {
+    display: flex;
+
+}
+
+.tt-sk-item-left img {
+    width: 200px;
+    height: 158px;
+}
+
+.tt-sk-item-right {
+    margin-left: 30px;
+    margin-right: 500px;
+}
+
+.tt-sk-item-right ul li {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+
+}
+
+.tt-sk-item-right ul:hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.ch-vl {
+    margin-right: 500px;
+    margin-top: 40px;
+}
+
+.ch-vl-text1 ul li {
+    padding: 10px 0px;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+}
+
+.ch-vl p {
+    margin-top: 20px;
+    font-size: 25px;
+    font-family: 'Arial Narrow';
+
+}
+
+.ch-vl-text2 {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ch-vl-text2-1 ul li {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    padding: 3px;
+}
+
+.ch-vl-text2-1 ul:hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+}
+
+.ch-vl-text2-1 ul li i {
+    color: red;
+}
+
+.ch-vl-text2-2 ul li i {
+    color: red;
+}
+
+.ch-vl-text2-2 ul:hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+}
+
+
+.ch-vl-text2-2 ul li {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    padding: 3px;
+}
+
+.ch-vl-text3 {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.ch-vl-text3-1 ul li {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    padding: 3px;
+}
+
+.ch-vl-text3-1 ul:hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+}
+
+.ch-vl-text3-1 ul li i {
+    color: red;
+}

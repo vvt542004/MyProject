@@ -1,0 +1,240 @@
+/*Dichvu.htm*/
+.Dv-slider {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+
+}
+
+.Dv-slider img {
+    width: 100%;
+    height: auto;
+
+}
+
+.Dv-text {
+    margin-top: 30px;
+
+}
+
+.Dv-text p {
+    font-size: 40px;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    text-align: center;
+}
+
+.Dv-text p:hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.Dv-items {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.Dv-item-1 img {
+    width: 500px;
+    height: 410px;
+}
+
+.Dv-item-2 {
+    margin-left: 100px;
+}
+
+.Dv-item-2 li {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+}
+
+.Dv-item-2 li button {
+    height: 50px;
+    width: 128px;
+    background-color: rgb(51, 50, 50);
+    color: white;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    margin-top: 20px;
+    border: none;
+
+}
+
+.Dv-item-2 li button i {
+    margin-right: 10px;
+}
+
+.Dv-item-2 li button:hover {
+    background-color: red;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.Dv-end {
+    margin-top: 20px;
+}
+
+.Dv-end ul {
+    display: flex;
+    justify-content: center;
+}
+
+.Dv-end ul li {
+    padding: 0px 10px;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+}
+
+.Dv-end ul li:nth-child(1):hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+}
+
+.Dv-end ul li:nth-child(3):hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+}
+
+.Dv-end ul li:nth-child(5):hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+}
+
+.Dv-end ul li:nth-child(7):hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+}
+
+.Dv-end ul li:nth-child(9):hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+}
+
+
+
+.subtd-video video {
+    width: 1190px;
+    height: 845px;
+    margin-left: 65px;
+}
+
+.subtd-text {
+    margin-top: 40px;
+    margin-left: 65px;
+}
+
+.subtd-text ul li {
+    padding: 3px;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+
+}
+
+.subtd-text ul li button {
+    background-color: rgb(51, 50, 50);
+    color: white;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    width: 350px;
+    height: 50px;
+    border: none;
+}
+
+.subtd-text ul li button:hover {
+    background-color: red;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+/*Dich vu ban hang*/
+.dv-bh {
+    margin-top: 60px;
+    margin-right: 500px;
+}
+
+/* .dv-bh-item li:nth-child(1):hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+} */
+
+.dv-bh-item li span:hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.dv-bh-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dv-bh-item li {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+}
+
+
+
+.dv-bh-item li:nth-child(2) {
+    padding: 15px 0px;
+}
+
+.dv-bh-item-sub {
+    display: flex;
+}
+
+.dv-bh-item-sub-1 img {
+    width: 216px;
+    height: 270px;
+
+}
+
+.dv-bh-item-sub-2 {
+    align-content: center;
+}
+
+.dv-bh-item-sub-2 li {
+    padding: 10px 0px;
+
+}
+
+/*Dich vu phu kien*/
+.dv-pk {
+    margin-top: 20px;
+}
+
+.dv-pk button {
+    background-color: rgb(51, 50, 50);
+    color: white;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    width: 250px;
+    height: 50px;
+    border: none;
+
+}
+
+.dv-pk button i {
+    margin-right: 20px;
+}
+
+.dv-pk button:hover {
+    background-color: red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

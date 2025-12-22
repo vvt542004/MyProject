@@ -1,0 +1,354 @@
+/*DONG XE.HTML*/
+.car-dx {
+    margin-top: 30px;
+
+}
+
+.car-dx-text {
+    height: 50px;
+    background-color: rgb(240, 239, 239);
+    width: 100%;
+    align-content: center;
+    cursor: pointer;
+
+}
+
+.car-dx-text p {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    margin-left: 30px;
+
+
+
+}
+
+.car-dx-text p:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.car-dx-text-seach {
+
+    display: flex;
+    justify-content: space-between;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: rgb(240, 239, 239);
+
+}
+
+.car-dx-text-seach.open {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+
+}
+
+
+.car-dx-text-seach-left ul li {
+    padding: 10px;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+}
+
+.car-dx-text-seach-left ul li:hover {
+    color: red;
+    cursor: pointer;
+}
+
+
+.car-dx-text-seach-left ul li button {
+    border: 1px solid grey;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    margin-right: 10px;
+
+}
+
+.car-dx-text-seach-left ul li button:hover {
+    cursor: pointer;
+}
+
+.car-dx-text-seach-right p {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+}
+
+.car-dx-text-seach-right-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px;
+
+}
+
+.car-dx-text-seach-right-item p {
+    margin-left: 20px;
+}
+
+.car-dx-text-seach-right-item i {
+    margin-right: 10px;
+}
+
+
+.car-dx-text-seach-right-item {
+    height: 50px;
+    width: 240px;
+    background-color: white;
+}
+
+.car-dx-warning {
+    margin-top: 15px;
+
+
+}
+
+.car-dx-warning p {
+    font-size: 16px;
+    font-family: 'Arial Narrow';
+    color: red;
+
+
+}
+
+.car-dx-content {
+    margin-top: 50px;
+}
+
+.car-dx-content-text p {
+    font-size: 30px;
+    font-family: 'Arial Narrow';
+}
+
+.car-dx-content-text p:hover {
+    color: red;
+    transition: all 0.5s ease;
+}
+
+.car-dx-content-items {
+    display: flex;
+
+}
+
+.car-dx-content-item {
+    margin-left: 15px;
+}
+
+.car-dx-content-item img {
+    height: 200px;
+    width: 310px;
+}
+
+.car-dx-content-item li {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+
+
+}
+
+.car-dx-content-item button {
+    height: 50px;
+    width: 310px;
+    background-color: white;
+    border: 0.2px solid rgb(202, 201, 201);
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+}
+
+.car-dx-content-item button:hover {
+    color: red;
+    border: 0.2px solid red;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+/*Kham pha 718_1*/
+.kp_718_1_text_one {
+    margin-top: 40px;
+}
+
+.kp_718_1_text_one h1 {
+    font-family: 'Arial Narrow';
+    font-size: 25px;
+}
+
+.kp_718_1_text_one p {
+    font-size: 17px;
+    font-family: 'Arial Narrow', Arial;
+}
+
+.kp_718_1_text_two {
+    margin-top: 30px;
+}
+
+.kp_718_1_text_two ul {
+    display: flex;
+    justify-content: left;
+}
+
+.kp_718_1_text_two ul li {
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    padding: 0px 10px;
+}
+
+.kp_718_1_text_two ul li b {
+    font-size: 20px;
+}
+
+.kp_718_1_conten {
+    margin-top: 30px;
+}
+
+.kp_718_1_conten h1 {
+    text-align: center;
+    font-family: 'Arial Narrow';
+    font-size: 25px;
+
+}
+
+.kp_718_1_conten_all {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+}
+
+.kp_718_1_conten_left {
+    width: 47%;
+}
+
+.kp_718_1_conten_left img {
+    width: 100%;
+}
+
+.kp_718_1_conten_right {
+    width: 47%;
+}
+
+.kp_718_1_conten_right ul li {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    padding: 5px 0px;
+}
+
+.kp_718_1_conten_right p {
+    margin-top: 30px;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+}
+
+/*Phan them gio hang*/
+
+.add-to-cart-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* khung số lượng */
+.quantity-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    height: 50px;
+}
+
+/* nút + - */
+.quantity-container button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 30px;
+}
+
+/* ô số lượng */
+.quantity-container input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    height: 30px;
+}
+
+/* nút thêm giỏ – giữ CSS cũ + tinh chỉnh */
+.add-to-cart {
+    font-family: 'Arial Narrow';
+    background-color: red;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    height: 50px;
+    white-space: nowrap;
+}
+
+
+.kp_718_1_end {
+    margin-top: 40px;
+}
+
+.kp_718_1_end h1 {
+    font-family: 'Arial Narrow';
+    font-size: 25px;
+    text-align: center;
+
+}
+
+.kp_718_1_end_all {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.kp_718_1_end_left {
+    width: 50%;
+}
+
+.kp_718_1_end_left_one {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kp_718_1_end_left_two img {
+    width: 100%;
+}
+
+.kp_718_1_end_left_one_sub {
+    width: 50%;
+}
+
+.kp_718_1_end_left_one_sub img {
+    width: 100%;
+}
+
+.kp_718_1_end_right {
+    width: 50%;
+}
+
+.kp_718_1_end_right_two {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kp_718_1_end_right_two_sub {
+    width: 50%;
+}
+
+.kp_718_1_end_right_two_sub img {
+    width: 100%;
+}
+
+.kp_718_1_end_right_one img {
+    width: 100%;
+}
