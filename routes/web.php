@@ -39,9 +39,13 @@ Route::get('/admin_dmuc', function () {
 // });
 Route::get('/admin_dhang', [AdminOrderController::class, 'index'])
     ->name('admin.Dhang');
+Route::delete('/admin/order/delete/{id}', [AdminOrderController::class, 'destroy']);
+Route::get('/admin/order/{id}', [AdminOrderController::class, 'show']);
 Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
-
+// adminemail 
+Route::post('/admin/order/{id}/approve', [AdminOrderController::class, 'approve']);
+Route::post('/admin/order/{id}/reject', [AdminOrderController::class, 'reject']);
 
 // USER
 // Trang chu

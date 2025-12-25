@@ -38,7 +38,7 @@ class DongxeController extends Controller
        public function dongxepana()
     {
         $products = product::orderBy('id', 'asc')->take(28)->get();
-        return view('UserDongxe.Dongxepana', [
+        return view('User.Dongxe.Dongxepana', [
             'products' => $products
         ]);
     }

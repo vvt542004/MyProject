@@ -61,66 +61,98 @@
                                     <th>Chi tiết đơn hàng</th>
                                 </tr>
                             </thead>
+<tbody>
+@if(isset($orders) && count($orders) > 0)
+@foreach($orders as $index => $order)
+<tr>
+    <td>{{ $index + 1 }}</td>
 
-                            <tbody>
-                            @if(isset($orders) && count($orders) > 0)
-                                @foreach($orders as $index => $order)
-                                    <tr>
-                                        <td>{{ $index + 1 }}</td>
+    <td>{{ $order->customer_name }}</td>
 
-                                        <td>{{ $order->customer_name }}</td>
+    <td>{{ $order->phone }}</td>
 
-                                        <td>{{ $order->phone }}</td>
+    <td>
+        @foreach($order->items as $item)
+            <div>
+                {{ $item->product_name }}
+                <strong>x{{ $item->quantity }}</strong>
+            </div>
+        @endforeach
+    </td>
 
-                                        <td>
-                                            @foreach($order->items as $item)
-                                                <div>
-                                                    {{ $item->product_name }}
-                                                    <strong>x{{ $item->quantity }}</strong>
-                                                </div>
-                                            @endforeach
-                                        </td>
+    <td>{{ number_format($order->total_price, 0, ',', '.') }} VNĐ</td>
 
-                                        <td>
-                                            {{ number_format($order->total_price, 0, ',', '.') }} VNĐ
-                                        </td>
+    <td style="max-width:220px;">{{ $order->address }}</td>
 
-                                        <td style="max-width:220px;">
-                                            {{ $order->address }}
-                                        </td>
+    <!-- ===== TRẠNG THÁI + ACTION ===== -->
+    <td style="text-align:center;">
 
-                                        <!-- TRẠNG THÁI -->
-                                        <td style="text-align:center;">
-                                            @if($order->status === 'pending')
-                                                <i class="ri-circle-fill"
-                                                   style="color:red;font-size:12px;"></i>
-                                                <span style="margin-left:6px;">Chưa duyệt</span>
-                                            @elseif($order->status === 'approved')
-                                                <i class="ri-circle-fill"
-                                                   style="color:green;font-size:12px;"></i>
-                                                <span style="margin-left:6px;">Đã duyệt</span>
-                                            @else
-                                                <i class="ri-circle-fill"
-                                                   style="color:gray;font-size:12px;"></i>
-                                                <span style="margin-left:6px;">Không rõ</span>
-                                            @endif
-                                        </td>
+        @if($order->status === 'pending')
+            <i class="ri-circle-fill" style="color:red;font-size:12px;"></i>
+            <span>Chưa duyệt</span>
 
-                                        <td style="text-align:center;">
-                                            <a href="{{ url('/admin/order/'.$order->id) }}">
-                                                <i class="ri-more-fill"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            @else
-                                <tr>
-                                    <td colspan="8" style="text-align:center;padding:20px;">
-                                        Chưa có đơn hàng nào
-                                    </td>
-                                </tr>
-                            @endif
-                            </tbody>
+            <div style="margin-top:10px;">
+                <form action="{{ url('/admin/order/'.$order->id.'/approve') }}"
+                      method="POST" style="display:inline;">
+                    @csrf
+                    <button class="btn-approve">✔ Duyệt</button>
+                </form>
+
+                <form action="{{ url('/admin/order/'.$order->id.'/reject') }}"
+                      method="POST" style="display:inline;">
+                    @csrf
+                    <button class="btn-reject">✖ Từ chối</button>
+                </form>
+            </div>
+
+        @elseif($order->status === 'approved')
+            <i class="ri-circle-fill" style="color:green;font-size:12px;"></i>
+            <span>Đã duyệt</span>
+
+        @elseif($order->status === 'rejected')
+            <i class="ri-circle-fill" style="color:#dc2626;font-size:12px;"></i>
+            <span>Đã từ chối</span>
+
+        @else
+            <i class="ri-circle-fill" style="color:gray;font-size:12px;"></i>
+            <span>Không rõ</span>
+        @endif
+
+    </td>
+
+    <!-- ===== ACTION ===== -->
+    <td style="text-align:center; position: relative;">
+        <div class="order-action">
+            <i class="ri-more-fill action-btn"></i>
+
+            <div class="order-dropdown">
+                <a href="{{ url('/admin/order/'.$order->id) }}">
+                    <i class="ri-eye-line"></i> Xem
+                </a>
+
+                <form action="{{ url('/admin/order/delete/'.$order->id) }}"
+                      method="POST"
+                      onsubmit="return confirm('Bạn có chắc muốn xóa đơn hàng này?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">
+                        <i class="ri-delete-bin-line"></i> Xóa
+                    </button>
+                </form>
+            </div>
+        </div>
+    </td>
+</tr>
+@endforeach
+@else
+<tr>
+    <td colspan="8" style="text-align:center;padding:20px;">
+        Chưa có đơn hàng nào
+    </td>
+</tr>
+@endif
+</tbody>
+                          
                         </table>
                     </div>
                 </div>
