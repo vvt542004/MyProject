@@ -41,8 +41,9 @@ class CheckoutController extends Controller
         ]);
     }
 
-    // 3️⃣ GỬI MAIL CHO ADMIN (SAU KHI ĐÃ CÓ $order)
-    Mail::to('admin@gmail.com')->send(new AdminNewOrderMail($order));
+    // 3️⃣ GỬI MAIL CHO ADMIN 
+Mail::to(config('mail.from.address'))
+    ->send(new AdminNewOrderMail($order));
 
     // 4️⃣ XÓA GIỎ HÀNG
     session()->forget('cart');

@@ -17,6 +17,14 @@ use App\Http\Controllers\CheckoutController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Dangki, Dangnhap
+Route::get('/dangki', function () {
+    return view('User.Dangki');
+});
+Route::get('/dangnhap', function () {
+    return view('User.Dangnhap');
+});
 //ADMIN 
 // Trang chu 
 Route::get('/admin_home', function () {

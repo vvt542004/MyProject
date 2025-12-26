@@ -175,7 +175,8 @@
             </div>
         </section>
         <hr style="margin-top: 120px;">
-        <!--Contact-->
+
+            <!--Contact-->
         <section class="car-contact">
             <div class="car-contact-conten">
                 <div class="car-contact-conten-left">
@@ -226,6 +227,9 @@
             <p><u>Chính sách quyền riêng tư </u></p>
         </div>
     </section>
+    </main>
+    <!--car-end-->
+
 </body>
 <script src="{{asset('frontend/asset/js/script.js')}}"></script>
 

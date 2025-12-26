@@ -133,8 +133,38 @@
                         </ul>
                     </nav>
                 </div>
+<div class="header-wrapper">
+    <div class="header-left">
+        <div class="header-search">
+            <input type="text" placeholder="Tìm kiếm ...">
+            <i class="ri-search-line"></i>
+        </div>
 
-                <div class="header-left">
+        <div class="header-actions">
+            <div class="header-cart">
+                <a href="{{ url('/cart') }}">
+                    <i class="ri-shopping-cart-line"></i>
+                    <span>Giỏ hàng</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="header-text">
+            <p>Liên hệ</p>
+        </div>
+    </div>
+
+    <!-- ✅ AVATAR NẰM NGOÀI -->
+    <div class="header-user-outside">
+        <img src="{{ asset('backend/admin/img/dv-bh5.jpg') }}" alt="User">
+        <div class="user-dropdown">
+            <a href="#">Đăng nhập</a>
+            <a href="#">Đăng ký</a>
+        </div>
+    </div>
+</div>
+
+                <!-- <div class="header-left">
                     <div class="header-search">
                         <input type="text" placeholder="Tìm kiếm ...">
                         <i class="ri-search-line"></i>
@@ -146,7 +176,7 @@
                     </div>
                     <div class="header-text">
                         <p>Liên hệ</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
