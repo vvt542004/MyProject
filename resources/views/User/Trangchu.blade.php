@@ -67,68 +67,68 @@
         <section class="car-line">
             <div class="car-line-one">
                 <div class="car-line-one-item">
-                    <img src="{{asset('frontend/asset/images/car718.jpg')}}" alt="">
+                    <img src="{{asset('frontend/asset/images/slider1.png')}}" alt="">
                     <div class="car-line-one-item-info">
                         <h1><i class="ri-arrow-right-wide-line"></i>718</h1>
                         <p>Giá từ 3.850.000.000 VND</p>
                         <p><i class="ri-arrow-right-wide-line"></i>Tất cả mẫu xe</p>
-                        <p><i class="ri-arrow-right-wide-line"></i>Mua xe</p>
+                        <p><i class="ri-arrow-right-wide-line"></i>So Sánh</p>
 
                     </div>
 
                 </div>
                 <div class="car-line-one-item">
-                    <img src="{{asset('frontend/asset/images/car911.jpg')}}" alt="">
+                    <img src="{{asset('frontend/asset/images/slider2.png')}}" alt="">
                     <div class="car-line-one-item-info">
                         <h1><i class="ri-arrow-right-wide-line"></i>911</h1>
                         <p>Giá từ 8.870.000.000 VND</p>
                         <p><i class="ri-arrow-right-wide-line"></i>Tất cả mẫu xe</p>
-                        <p><i class="ri-arrow-right-wide-line"></i>Mua xe</p>
+                        <p><i class="ri-arrow-right-wide-line"></i>So Sánh</p>
 
                     </div>
 
                 </div>
                 <div class="car-line-one-item">
-                    <img src="{{asset('frontend/asset/images/cartaycan.jpg')}}" alt="">
+                    <img src="{{asset('frontend/asset/images/slider3.png')}}" alt="">
                     <div class="car-line-one-item-info">
                         <h1><i class="ri-arrow-right-wide-line"></i>Taycan</h1>
                         <p>Giá từ 4.620.000.000 VND</p>
                         <p><i class="ri-arrow-right-wide-line"></i>Tất cả mẫu xe</p>
-                        <p><i class="ri-arrow-right-wide-line"></i>Mua xe</p>
+                        <p><i class="ri-arrow-right-wide-line"></i>So Sánh</p>
 
                     </div>
 
                 </div>
                 <div class="car-line-one-item">
-                    <img src="{{asset('frontend/asset/images/carpanamera.jpg')}}" alt="">
+                    <img src="{{asset('frontend/asset/images/slider4.png')}}" alt="">
                     <div class="car-line-one-item-info">
                         <h1><i class="ri-arrow-right-wide-line"></i>Panamera</h1>
                         <p>Giá từ 6.420.000.000 VND</p>
                         <p><i class="ri-arrow-right-wide-line"></i>Tất cả mẫu xe</p>
-                        <p><i class="ri-arrow-right-wide-line"></i>Mua xe</p>
+                        <p><i class="ri-arrow-right-wide-line"></i>So Sánh</p>
 
                     </div>
 
                 </div>
                 <div class="car-line-one-item">
-                    <img src="{{asset('frontend/asset/images/carmacan.jpg')}}" alt="">
+                    <img src="{{asset('frontend/asset/images/slider5.png')}}" alt="">
                     <div class="car-line-one-item-info">
                         <h1><i class="ri-arrow-right-wide-line"></i>Macan</h1>
                         <p>Giá từ 3.350.000.000 VND</p>
                         <p><i class="ri-arrow-right-wide-line"></i>Tất cả mẫu xe</p>
-                        <p><i class="ri-arrow-right-wide-line"></i>Mua xe</p>
+                        <p><i class="ri-arrow-right-wide-line"></i>So Sánh</p>
 
                     </div>
                 </div>
             </div>
             <div class="car-line-two">
                 <div class="car-line-one-item">
-                    <img src="{{asset('frontend/asset/images/carcayenne.jpg')}}" alt="">
+                    <img src="{{asset('frontend/asset/images/slider6.png')}}" alt="">
                     <div class="car-line-one-item-info">
                         <h1><i class="ri-arrow-right-wide-line"></i>Cayenne</h1>
                         <p>Giá từ 5.560.000.000 VND</p>
                         <p><i class="ri-arrow-right-wide-line"></i>Tất cả mẫu xe</p>
-                        <p><i class="ri-arrow-right-wide-line"></i>Mua xe</p>
+                        <p><i class="ri-arrow-right-wide-line"></i>So Sánh</p>
 
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                     </div>
                 </div>
                 <div class="discovery-item">
-                    <img src="{{asset('frontend/asset/images/carkp2.jpg')}}" alt="">
+                    <img src="{{asset('frontend/asset/images/carkp5.png')}}" alt="">
                     <div class="discovery-item-text">
                         <p><i class="ri-arrow-right-wide-line"></i>Bộ sưu tập xe giới hạn trên toàn thế giới</p>
 
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <div class="discovery-item">
-                    <img src="{{asset('frontend/asset/images/carkp4.jpg')}}" alt="">
+                    <img src="{{asset('frontend/asset/images/carkp6.png')}}" alt="">
                     <div class="discovery-item-text">
                         <p><i class="ri-arrow-right-wide-line"></i>Ưu đãi đặc biệt phụ kiện xe hơi giá rẻ chất lượng
                         </p>

@@ -177,16 +177,32 @@ header.sticky .row-flex {
     top: 50%;
     right: 40px;
     /* chỉnh xa/gần mép phải */
-    transform: translateY(-120%);
-    right: -90px;
+    transform: translateY(-180%);
+    right: -240px;
 
 
 }
 
+/* user Avatar */
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #d1d5db;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #1e3a8a;
+    cursor: pointer;
+}
+
 /* Avatar */
 .header-user-outside img {
-    width: 65px;
-    height: 65px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
@@ -194,18 +210,28 @@ header.sticky .row-flex {
     background: #fff;
 }
 
+
 /* Dropdown */
 .user-dropdown {
     position: absolute;
-    top: 52px;
-    right: -30px;
+    top: 40px;
+    right: 30%;
+    transform: translateX(50%);
     background: #fff;
-    border-radius: 6px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
     display: none;
-    min-width: 140px;
+    min-width: 160px;
     z-index: 999;
+}
 
+.header-user-outside::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 10px;
 }
 
 .user-dropdown a {
@@ -227,6 +253,7 @@ header.sticky .row-flex {
 
 /*Dang Nhap*/
 .auth-wrapper {
+
     max-width: 420px;
     margin: 100px auto;
     background: #ffffff;
@@ -308,6 +335,72 @@ header.sticky .row-flex {
         margin: 60px 15px;
         padding: 25px 20px;
     }
+}
+
+/*Dang nhap 2*/
+.header-user-outside {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #eee;
+}
+
+/* Dropdown */
+.user-dropdown {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    background: #fff;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+}
+
+/* Hover hiện dropdown */
+.header-user-outside:hover .user-dropdown {
+    display: flex;
+}
+
+/* Item */
+.user-dropdown a,
+.user-dropdown .logout-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    background: #fff;
+    border: none;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Hover item */
+.user-dropdown a:hover,
+.user-dropdown .logout-btn:hover {
+    background: #f5f5f5;
+    color: #000;
+}
+
+/* Nút logout nhìn như link */
+.logout-btn {
+    font-family: inherit;
+}
+
+/* Ngăn form phá layout */
+.user-dropdown form {
+    margin: 0;
 }
 
 /*Dang ki*/
@@ -521,91 +614,124 @@ header.sticky .row-flex {
     font-weight: bold;
 }
 
-/**/
+/* ===== CAR LINE ===== */
+/* ===== CAR LINE FIX SIZE 444x500 ===== */
 .car-line {
-    margin-top: 30px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 444px);
+    justify-content: center;
+    gap: 2px;
 }
 
-.car-line-one {
-    display: flex;
-
+/* bỏ chia hàng cũ */
+.car-line-one,
+.car-line-two {
+    display: contents;
 }
 
+/* ===== ITEM ===== */
 .car-line-one-item {
     position: relative;
     overflow: hidden;
-    width: 263px;
-    height: 296px;
+    width: 444px;
+    height: 500px;
 }
 
+/* Ảnh */
 .car-line-one-item img {
-    height: 100%;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
+/* Overlay nền tối */
+.car-line-one-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Hover hiện overlay */
+.car-line-one-item:hover::after {
+    opacity: 1;
+}
+
+/* ===== INFO ===== */
 .car-line-one-item-info {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(97, 96, 96, 0.6);
-    color: white;
-    padding: 15px;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
+    inset: 0;
+    padding: 30px;
+    color: #fff;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== ANIMATION ===== */
+/* Text trên */
+.car-line-one-item-info h1,
+.car-line-one-item-info p:nth-child(2) {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+/* Text dưới */
+.car-line-one-item-info p:nth-child(3),
+.car-line-one-item-info p:nth-child(4) {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+/* Hover hiện text */
+.car-line-one-item:hover .car-line-one-item-info h1,
+.car-line-one-item:hover .car-line-one-item-info p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ===== STYLE CHI TIẾT ===== */
+.car-line-one-item-info h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    /* 2 dòng trên gần nhau */
 }
 
 .car-line-one-item-info p:nth-child(2) {
-    margin-bottom: 165px;
-    margin-top: 5px;
-
+    font-size: 18px;
+    margin-bottom: 300px;
+    /* tách nhóm trên và dưới */
 }
 
-.car-line-one-item:hover .car-line-one-item-info {
-    transform: translateY(0%);
-}
-
-
-.car-line-one-item-info h1 i {
-    color: red;
-    font-size: 20px;
-
-}
-
-.car-line-one-item-info h1 {
-
-    font-family: 'Arial Narrow';
-    cursor: pointer;
-
-
-}
-
-.car-line-one-item-info h1:hover {
-    color: red;
-
-}
-
-.car-line-one-item-info p {
-    font-size: 20px;
-    font-family: 'Arial Narrow';
+.car-line-one-item-info p:nth-child(3),
+.car-line-one-item-info p:nth-child(4) {
+    font-size: 18px;
+    margin-bottom: 6px;
+    /* 2 dòng dưới gần nhau */
     cursor: pointer;
 }
 
+.car-line-one-item-info h1 i,
 .car-line-one-item-info p i {
     color: red;
-    font-size: 20px;
-
+    margin-right: 8px;
 }
 
-.car-line-one-item-info p:nth-child(3):hover {
+.car-line-one-item-info p:hover {
     color: red;
 }
 
-.car-line-one-item-info p:nth-child(4):hover {
-    color: red;
-}
-
+/*discovery*/
+/* ===== DISCOVERY ===== */
 .discovery {
     margin-top: 30px;
 }
@@ -614,37 +740,63 @@ header.sticky .row-flex {
     display: flex;
 }
 
+/* ===== ITEM ===== */
 .discovery-item {
-    height: 290px;
     width: 390px;
+    height: 290px;
+    position: relative;
+    cursor: pointer;
 }
 
+/* Ảnh */
 .discovery-item img {
     width: 100%;
     height: 100%;
     display: block;
-    cursor: pointer;
-
 }
 
+/* Thanh đỏ dưới ảnh */
+.discovery-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background: #e10600;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+/* Hover ảnh -> hiện thanh đỏ */
+.discovery-item:hover::after {
+    transform: scaleX(1);
+}
+
+/* ===== TEXT ===== */
 .discovery-item-text {
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
 .discovery-item-text p {
     font-family: 'Arial Narrow';
     font-size: 17px;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.discovery-item-text p:hover {
-    color: red;
-
+/* Hover ảnh -> chữ đỏ */
+.discovery-item:hover .discovery-item-text p {
+    color: #e10600;
 }
 
+/* Icon */
 .discovery-item-text p i {
-    color: red;
+    color: #e10600;
 }
+
+
 
 /*car-contact*/
 .car-contact {
@@ -765,6 +917,7 @@ header.sticky .row-flex {
 
 .submenu-item {
     position: absolute;
+
     display: none;
     top: 100%;
     z-index: 1000;

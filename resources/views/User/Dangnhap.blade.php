@@ -2,96 +2,113 @@
 <html lang="en">
 <head>
     @include('User.parts.head')
+
+    <style>
+        #toast-success {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 9999;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-@include('User.parts.header')
+{{-- ✅ TOAST GÓC PHẢI --}}
+@if(session('success'))
+    <div id="toast-success">
+        {{ session('success') }}
+    </div>
+@endif
 
 <main>
     <section class="auth-wrapper">
         <h2>Đăng nhập</h2>
 
-        <form>
+        {{-- Thông báo lỗi đăng nhập --}}
+        @if(session('error'))
+            <div class="auth-error">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        <form method="POST" action="{{ url('/dangnhap') }}">
+            @csrf
+
             <div class="auth-group">
-                <input type="email" placeholder="Email">
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value="{{ old('email') }}"
+                    required
+                >
             </div>
 
             <div class="auth-group">
-                <input type="password" placeholder="Mật khẩu">
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Mật khẩu"
+                    required
+                >
             </div>
 
             <div class="auth-extra">
                 <label>
-                    <input type="checkbox"> Ghi nhớ đăng nhập
+                    <input type="checkbox" name="remember">
+                    Ghi nhớ đăng nhập
                 </label>
-                <a>Quên mật khẩu?</a>
+
+                <a href="#">Quên mật khẩu?</a>
             </div>
 
-            <button type="button" class="auth-btn">Đăng nhập</button>
+            <button type="submit" class="auth-btn">
+                Đăng nhập
+            </button>
         </form>
 
         <div class="auth-link">
             Chưa có tài khoản?
-            <a>Đăng ký</a>
+            <a href="{{ url('/dangki') }}">Đăng ký</a>
         </div>
     </section>
-
-
-   <!--Contact-->
-        <section class="car-contact">
-            <div class="car-contact-conten">
-                <div class="car-contact-conten-left">
-                    <p>Thông tin liên lạc:</p>
-                    <p>STORECAR Việt Nam</p>
-                    <p>Liên hệ chúng tôi: Viettuannger@gmail.com</p>
-                    <p>Dịch vụ khách hàng: Storecar54@gmail.com</p>
-                    <p>Các trung tâm của store</p>
-                    <p>Trung tâm store TP.Hà Nội</p>
-                    <p>Trung tâm store TP.Hồ Chí Minh</p>
-                    <p>Trung tâm store TP.Sài Gòn</p>
-                </div>
-                <div class="car-contact-conten-right">
-                    <div class="car-contact-conten-right-one">
-                        <button><i class="ri-share-fill"></i> Chia sẻ trang</button>
-
-                    </div>
-                    <div class="car-contact-conten-right-two">
-                        <p>Kết nối với Store</p>
-
-                    </div>
-                    <div class="car-contact-conten-right-three">
-                        <div class="car-contact-conten-right-three-subset">
-                            <i class="ri-facebook-fill"></i>
-
-                        </div>
-                        <div class="car-contact-conten-right-three-subset">
-                            <i class="ri-youtube-line"></i>
-
-                        </div>
-                        <div class="car-contact-conten-right-three-subset">
-                            <i class="ri-instagram-line"></i>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    <!--car-end-->
-    <section class="car-end">
-        <div class="car-end-text-one">
-            <p><i class="ri-store-line"></i>Store Việt Nam 2025</p>
-        </div>
-        <div class="car-end-text-two">
-            <p><u>Chính sách quyền riêng tư </u></p>
-        </div>
-    </section>
-    </main>
-    <!--car-end-->
+</main>
 
 <script src="{{ asset('frontend/asset/js/script.js') }}"></script>
+
+{{-- ✅ JS đặt CUỐI để toast tự mất --}}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const toast = document.getElementById('toast-success');
+    if (toast) {
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => toast.remove(), 500);
+        }, 3000);
+    }
+});
+</script>
+
 </body>
 </html>

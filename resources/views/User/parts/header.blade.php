@@ -155,15 +155,48 @@
     </div>
 
     <!-- ✅ AVATAR NẰM NGOÀI -->
-    <div class="header-user-outside">
-        <img src="{{ asset('backend/admin/img/dv-bh5.jpg') }}" alt="User">
-        <div class="user-dropdown">
-            <a href="#">Đăng nhập</a>
-            <a href="#">Đăng ký</a>
-        </div>
-    </div>
-</div>
+<!-- ✅ AVATAR -->
+<div class="header-user-outside">
 
+    {{-- Avatar / Icon --}}
+    @auth
+        @if(Auth::user()->avatar)
+            <img
+                src="{{ asset('storage/avatars/' . Auth::user()->avatar) }}"
+                alt="User"
+                class="user-avatar"
+            >
+        @else
+            <i class="fa-solid fa-user user-avatar"></i>
+        @endif
+    @else
+        <i class="fa-solid fa-user user-avatar"></i>
+    @endauth
+
+    {{-- Dropdown --}}
+    <div class="user-dropdown">
+        @guest
+            <a href="{{ url('/dangnhap') }}">Đăng nhập</a>
+            <a href="{{ url('/dangki') }}">Đăng ký</a>
+        @endguest
+
+        @auth
+            <a href="{{ url('/thongtin') }}">Thông tin</a>
+
+            @if(Auth::user()->role === 'admin')
+                <a href="{{ url('/admin') }}">Quản lý</a>
+            @endif
+
+            <form method="POST" action="{{ url('/dangxuat') }}">
+                @csrf
+                <button type="submit" class="logout-btn">
+                    Đăng xuất
+                </button>
+            </form>
+        @endauth
+    </div>
+
+</div>
                 <!-- <div class="header-left">
                     <div class="header-search">
                         <input type="text" placeholder="Tìm kiếm ...">

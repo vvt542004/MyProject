@@ -7,6 +7,7 @@ use App\Http\Controllers\KhamphaController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,12 +20,14 @@ use App\Http\Controllers\CheckoutController;
 */
 
 // Dangki, Dangnhap
-Route::get('/dangki', function () {
-    return view('User.Dangki');
-});
-Route::get('/dangnhap', function () {
-    return view('User.Dangnhap');
-});
+Route::get('/dangki', fn() => view('User.Dangki'));
+Route::post('/dangki', [AuthController::class, 'register']);
+
+Route::get('/dangnhap', fn() => view('User.Dangnhap'));
+Route::post('/dangnhap', [AuthController::class, 'login']);
+
+Route::post('/dangxuat', [AuthController::class, 'logout']);
+
 //ADMIN 
 // Trang chu 
 Route::get('/admin_home', function () {
