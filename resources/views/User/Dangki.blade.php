@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     @include('User.parts.head')
 </head>
 
-<body>
+<body class="login">
 
 <main>
     <section class="auth-wrapper">
+
+        {{-- LOGO --}}
+        <div class="auth-logo">
+            <img src="{{ asset('frontend/asset/images/logo.png') }}" alt="Logo">
+        </div>
+
         <h2>Đăng ký tài khoản</h2>
 
-        {{-- Hiển thị lỗi validate --}}
+        {{-- LỖI VALIDATE --}}
         @if ($errors->any())
             <div class="auth-error">
                 @foreach ($errors->all() as $error)
@@ -23,41 +29,22 @@
             @csrf
 
             <div class="auth-group">
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Họ và tên"
-                    value="{{ old('name') }}"
-                    required
-                >
+                <input type="text" name="name" placeholder="Họ và tên"
+                       value="{{ old('name') }}" required>
             </div>
 
             <div class="auth-group">
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value="{{ old('email') }}"
-                    required
-                >
+                <input type="email" name="email" placeholder="Email"
+                       value="{{ old('email') }}" required>
             </div>
 
             <div class="auth-group">
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Mật khẩu"
-                    required
-                >
+                <input type="password" name="password" placeholder="Mật khẩu" required>
             </div>
 
             <div class="auth-group">
-                <input
-                    type="password"
-                    name="password_confirmation"
-                    placeholder="Nhập lại mật khẩu"
-                    required
-                >
+                <input type="password" name="password_confirmation"
+                       placeholder="Nhập lại mật khẩu" required>
             </div>
 
             <button type="submit" class="auth-btn">
@@ -72,6 +59,5 @@
     </section>
 </main>
 
-<script src="{{ asset('frontend/asset/js/script.js') }}"></script>
 </body>
 </html>

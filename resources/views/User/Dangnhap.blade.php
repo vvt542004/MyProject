@@ -1,39 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     @include('User.parts.head')
-
-    <style>
-        #toast-success {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #28a745;
-            color: #fff;
-            padding: 14px 20px;
-            border-radius: 6px;
-            font-size: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 9999;
-            animation: slideIn 0.4s ease;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-    </style>
 </head>
+<body class="login">
 
-<body>
 
-{{-- ✅ TOAST GÓC PHẢI --}}
+
+{{-- TOAST THÀNH CÔNG --}}
 @if(session('success'))
     <div id="toast-success">
         {{ session('success') }}
@@ -42,9 +16,15 @@
 
 <main>
     <section class="auth-wrapper">
+
+        {{-- LOGO --}}
+        <div class="auth-logo">
+            <img src="{{ asset('frontend/asset/images/logo.png') }}" alt="Logo">
+        </div>
+
         <h2>Đăng nhập</h2>
 
-        {{-- Thông báo lỗi đăng nhập --}}
+        {{-- LỖI --}}
         @if(session('error'))
             <div class="auth-error">
                 {{ session('error') }}
@@ -55,30 +35,18 @@
             @csrf
 
             <div class="auth-group">
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value="{{ old('email') }}"
-                    required
-                >
+                <input type="email" name="email" placeholder="Email"
+                       value="{{ old('email') }}" required>
             </div>
 
             <div class="auth-group">
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Mật khẩu"
-                    required
-                >
+                <input type="password" name="password" placeholder="Mật khẩu" required>
             </div>
 
             <div class="auth-extra">
                 <label>
-                    <input type="checkbox" name="remember">
-                    Ghi nhớ đăng nhập
+                    <input type="checkbox" name="remember"> Ghi nhớ đăng nhập
                 </label>
-
                 <a href="#">Quên mật khẩu?</a>
             </div>
 
@@ -94,9 +62,6 @@
     </section>
 </main>
 
-<script src="{{ asset('frontend/asset/js/script.js') }}"></script>
-
-{{-- ✅ JS đặt CUỐI để toast tự mất --}}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const toast = document.getElementById('toast-success');

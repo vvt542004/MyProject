@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+@section('title', 'Dịch vụ bán hàng')
 <head>
       @include('User.parts.head')
 </head>

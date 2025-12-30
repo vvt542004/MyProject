@@ -1,4 +1,6 @@
-                <p><img src="{{asset('backend/admin/img/logo.png')}}" alt=""></p>
+                <p><a href="{{ url('/') }}">
+                   <img src="{{ asset('backend/admin/img/logo.png') }}" alt="Admin Logo">
+                </a></p>
                 <p style="font-size: 20px; font-family: 'Arial Narrow'; margin-left: 40px;"><i
                         class="ri-home-6-line"></i> Thống kê</p>
                 <!-- <p style=" font-size: 24px; font-family: 'Arial Narrow'; color: black; margin-left: 10px;">Quản lý</p> -->

@@ -226,8 +226,10 @@
         <div class="car-end-text-two">
             <p><u>Chính sách quyền riêng tư </u></p>
         </div>
+          
     </section>
     </main>
+         <!-- @include('User.parts.footer') -->
     <!--car-end-->
 
 </body>

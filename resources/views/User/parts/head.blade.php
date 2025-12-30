@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="{{asset('frontend/asset/css/vestore.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/asset/css/dongxe.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/asset/css/cart.css')}}">
-   
-    <title>Home</title>
+    <link rel="stylesheet" href="{{asset('frontend/asset/css/footer.css')}}">
+<title>
+    @hasSection('title')
+        @yield('title') | {{ config('app.name') }}
+    @else
+        {{ config('app.name') }}
+    @endif
+</title>
   

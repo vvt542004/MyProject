@@ -251,91 +251,130 @@ header.sticky .row-flex {
     display: block;
 }
 
-/*Dang Nhap*/
-.auth-wrapper {
-
-    max-width: 420px;
-    margin: 100px auto;
-    background: #ffffff;
-    padding: 35px 30px;
-    border-radius: 10px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, .12);
+/* ============================= */
+/* LOGIN */
+/* ============================= */
+body.login {
+    margin: 0;
+    min-height: 100vh;
+    background: url("../images/Porsche-AG-banner.jpg") no-repeat center center / cover;
+    position: relative;
     font-family: 'Arial Narrow';
 }
 
-.auth-wrapper h2 {
+
+body.login::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+/* ============================= */
+/* FORM */
+/* ============================= */
+body.login .auth-wrapper {
+    position: relative;
+    z-index: 1;
+    /* nổi lên trên overlay */
+    max-width: 420px;
+    margin: 100px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* LOGO */
+body.login .auth-logo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+body.login .auth-logo img {
+    width: 110px;
+}
+
+/* TITLE */
+body.login .auth-wrapper h2 {
     text-align: center;
     margin-bottom: 25px;
     font-size: 26px;
     color: #1e3a8a;
 }
 
-.auth-group {
+/* INPUT */
+body.login .auth-group {
     margin-bottom: 15px;
 }
 
-.auth-group input {
+body.login .auth-group input {
     width: 100%;
     padding: 12px 14px;
     border-radius: 6px;
     border: 1px solid #d1d5db;
     font-size: 15px;
-    transition: .3s;
 }
 
-.auth-group input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, .15);
+body.login .auth-group input:focus {
+    border-color: #b30000;
+    box-shadow: 0 0 0 2px rgba(179, 0, 0, 0.2);
+    outline: none;
 }
 
-.auth-btn {
+/* BUTTON */
+body.login .auth-btn {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    background: linear-gradient(135deg, #b30000, #ff0000);
     color: #fff;
     border: none;
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
-    transition: .3s;
 }
 
-.auth-btn:hover {
-    opacity: .9;
-    transform: translateY(-1px);
+body.login .auth-btn:hover {
+    opacity: 0.9;
 }
 
-.auth-link {
+/* LINK */
+body.login .auth-link {
     text-align: center;
     margin-top: 18px;
     font-size: 14px;
 }
 
-.auth-link a {
-    color: #2563eb;
+body.login .auth-link a {
+    color: #b30000;
     font-weight: bold;
-    cursor: pointer;
+    text-decoration: none;
 }
 
-.auth-extra {
+body.login .auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* EXTRA */
+body.login .auth-extra {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     font-size: 14px;
-    margin-bottom: 10px;
 }
 
-.auth-extra label {
-    cursor: pointer;
+/* TOAST */
+body.login #toast-success {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 6px;
+    z-index: 9999;
 }
 
-@media (max-width: 480px) {
-    .auth-wrapper {
-        margin: 60px 15px;
-        padding: 25px 20px;
-    }
-}
 
 /*Dang nhap 2*/
 .header-user-outside {
@@ -403,24 +442,52 @@ header.sticky .row-flex {
     margin: 0;
 }
 
-/*Dang ki*/
-.auth-wrapper {
-    max-width: 420px;
-    margin: 100px auto;
-    background: #ffffff;
-    padding: 35px 30px;
-    border-radius: 10px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, .12);
-    font-family: 'Arial Narrow';
-}
 
-.auth-wrapper h2 {
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+.profile-success {
+    background: #e6fffa;
+    color: #065f46;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 15px;
     text-align: center;
-    margin-bottom: 25px;
-    font-size: 26px;
-    color: #1e3a8a;
 }
 
+/* =========================
+   AVATAR
+========================= */
+.profile-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.profile-avatar img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #b30000;
+}
+
+.profile-avatar i {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: #666;
+}
+
+/* =========================
+   INPUT GROUP
+========================= */
 .auth-group {
     margin-bottom: 15px;
 }
@@ -431,24 +498,26 @@ header.sticky .row-flex {
     border-radius: 6px;
     border: 1px solid #d1d5db;
     font-size: 15px;
-    transition: .3s;
 }
 
 .auth-group input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, .15);
+    border-color: #b30000;
+    box-shadow: 0 0 0 2px rgba(179, 0, 0, .2);
+    outline: none;
 }
 
+/* =========================
+   BUTTON
+========================= */
 .auth-btn {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    background: linear-gradient(135deg, #b30000, #ff0000);
     color: #fff;
     border: none;
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
     transition: .3s;
 }
 
@@ -457,24 +526,31 @@ header.sticky .row-flex {
     transform: translateY(-1px);
 }
 
-.auth-link {
+.auth-btn-back {
+    display: block;
     text-align: center;
-    margin-top: 18px;
-    font-size: 14px;
+    margin-top: 12px;
+    background: #e5e7eb;
+    color: #111827;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-.auth-link a {
-    color: #2563eb;
-    font-weight: bold;
-    cursor: pointer;
+.auth-btn-back:hover {
+    background: #d1d5db;
 }
 
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 480px) {
     .auth-wrapper {
         margin: 60px 15px;
         padding: 25px 20px;
     }
 }
+
 
 /*slider*/
 .slider {

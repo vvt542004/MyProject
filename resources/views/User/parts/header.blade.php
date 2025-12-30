@@ -181,10 +181,10 @@
         @endguest
 
         @auth
-            <a href="{{ url('/thongtin') }}">Thông tin</a>
+            <a href="{{ url('/ttuser') }}">Thông tin</a>
 
             @if(Auth::user()->role === 'admin')
-                <a href="{{ url('/admin') }}">Quản lý</a>
+                <a href="{{ url('/admin_home') }}">Quản lý</a>
             @endif
 
             <form method="POST" action="{{ url('/dangxuat') }}">
@@ -195,7 +195,6 @@
             </form>
         @endauth
     </div>
-
 </div>
                 <!-- <div class="header-left">
                     <div class="header-search">

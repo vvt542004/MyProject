@@ -8,6 +8,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,14 +21,18 @@ use App\Http\Controllers\AuthController;
 */
 
 // Dangki, Dangnhap
-Route::get('/dangki', fn() => view('User.Dangki'));
+Route::get('/dangki', fn() => view('Login.Dangki'));
 Route::post('/dangki', [AuthController::class, 'register']);
-
-Route::get('/dangnhap', fn() => view('User.Dangnhap'));
+Route::get('/dangnhap', fn() => view('Login.Dangnhap'));
 Route::post('/dangnhap', [AuthController::class, 'login']);
-
 Route::post('/dangxuat', [AuthController::class, 'logout']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/ttuser', [AuthController::class, 'index'])
+        ->name('user.profile');
+    Route::post('/ttuser', [AuthController::class, 'update'])
+        ->name('user.profile.update');
 
+});
 //ADMIN 
 // Trang chu 
 Route::get('/admin_home', function () {
@@ -45,9 +50,7 @@ Route::get('/admin_product/{id}/view', [ProductController::class, 'view'])->name
 Route::get('/admin_dmuc', function () {
     return view('Admin/Dmuc');
 });
-// Route::get('/admin_dhang', function () {
-//     return view('Admin/Dhang');
-// });
+
 Route::get('/admin_dhang', [AdminOrderController::class, 'index'])
     ->name('admin.Dhang');
 Route::delete('/admin/order/delete/{id}', [AdminOrderController::class, 'destroy']);
@@ -57,6 +60,11 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 // adminemail 
 Route::post('/admin/order/{id}/approve', [AdminOrderController::class, 'approve']);
 Route::post('/admin/order/{id}/reject', [AdminOrderController::class, 'reject']);
+//Quan lý user
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin_home', [AdminController::class, 'index']);
+});
+
 
 // USER
 // Trang chu

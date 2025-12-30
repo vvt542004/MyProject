@@ -1,0 +1,170 @@
+.footer {
+    width: 100%;
+    background-color: #212121;
+
+
+}
+
+.footered {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    font-size: 13px;
+    margin-top: 30px;
+}
+
+.gioithieu {
+    width: 400px;
+    margin-left: 60px;
+}
+
+.gioithieu h4 {
+    color: white;
+}
+
+.gioithieu p {
+    color: #9e9e9e;
+}
+
+.thongtin {
+    margin-top: 30px;
+}
+
+.gioithieu i {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+
+.lienket {
+    width: 150px;
+
+}
+
+.lienket h4 {
+    text-align: center;
+    color: white;
+}
+
+.lienket ul {
+    list-style: none;
+}
+
+.lienket ul li {
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+.lienket ul li a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #9e9e9e;
+}
+
+.lienket ul li a:hover {
+    color: #b49149;
+}
+
+.wrapper {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    margin-left: 30px;
+}
+
+.wrapper input {
+    color: white;
+}
+
+.wrapper h4 {
+    color: white;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-bottom: 2px solid #162238;
+    margin: 28px 0 32px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #9e9e9e;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+    padding: 0 5px;
+}
+
+.input-box input:focus~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 5px;
+    margin-top: 8px;
+}
+
+.input-box .icon i {
+    color: white;
+    font-size: 20px;
+}
+
+.ketnoi {
+    width: 250px;
+    margin-left: 40px;
+}
+
+.ketnoi h4 {
+    color: white;
+}
+
+.ket- {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ket- a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 100%;
+    margin: 5px;
+}
+
+.ket- i {
+    font-size: 20px;
+    color: #f1bebe;
+}
+
+.ket- i:hover {
+    color: #a75c5c;
+}
+
+.ket- a:hover {
+    background-color: #d5f5d1;
+
+}

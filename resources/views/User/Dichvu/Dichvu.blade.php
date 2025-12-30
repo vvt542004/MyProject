@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+@section('title', 'Dịch vụ')
 <head>
     @include('User.parts.head')
-
 </head>
 
 <body>
