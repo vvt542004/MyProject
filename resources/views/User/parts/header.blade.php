@@ -184,7 +184,7 @@
             <a href="{{ url('/ttuser') }}">Thông tin</a>
 
             @if(Auth::user()->role === 'admin')
-                <a href="{{ url('/admin_home') }}">Quản lý</a>
+                <a href="{{ url('/admin_dashboard') }}">Quản lý</a>
             @endif
 
             <form method="POST" action="{{ url('/dangxuat') }}">

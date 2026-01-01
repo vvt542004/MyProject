@@ -255,3 +255,129 @@
     border-radius: 6px;
     border: 1px solid #ccc;
 }
+
+/* Khối chọn hình thức thanh toán */
+/* ===== PAYMENT SECTION ===== */
+.payment-section {
+
+    text-align: center;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+
+}
+
+/* Layout 2 cột */
+.payment-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* ===== LEFT: OPTIONS ===== */
+.payment-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 2px solid #e5e7eb;
+    border-radius: 14px;
+    cursor: pointer;
+    background: #fff;
+    transition: 0.25s ease;
+    font-size: 16px;
+}
+
+.payment-item:hover {
+    border-color: #2563eb;
+    background: #f8fafc;
+}
+
+/* Ẩn radio mặc định */
+.payment-item input {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #9ca3af;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Radio checked */
+.payment-item input:checked {
+    border-color: #2563eb;
+    background: #2563eb;
+}
+
+.payment-item input:checked::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Khi chọn */
+.payment-item:has(input:checked) {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+}
+
+/* ===== RIGHT: INFO BOX ===== */
+.payment-right {
+    position: relative;
+}
+
+.payment-box {
+    display: none;
+    padding: 22px;
+    background: #f9fafb;
+    border: 2px dashed #c7d2fe;
+    border-radius: 18px;
+    text-align: center;
+    animation: fadeIn 0.35s ease;
+}
+
+.payment-box img {
+    width: 220px;
+    margin: 15px auto;
+    display: block;
+}
+
+.payment-box p {
+    margin: 8px 0;
+    font-size: 15px;
+    color: #374151;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .payment-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

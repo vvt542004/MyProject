@@ -1,0 +1,49 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.Tke {
+    margin-bottom: 30px;
+    color: white;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.pending {
+    border-left: 6px solid #f59e0b;
+}
+
+.approved {
+    border-left: 6px solid #22c55e;
+}
+
+.revenue {
+    border-left: 6px solid #2563eb;
+}
+
+.users {
+    border-left: 6px solid #8b5cf6;
+}
+
+.today {
+    border-left: 6px solid #ef4444;
+}

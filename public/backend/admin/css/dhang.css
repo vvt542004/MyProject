@@ -59,6 +59,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px 30px;
+
 }
 
 .order-info-grid div span {

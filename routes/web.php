@@ -9,6 +9,11 @@ use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\CategoryController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,9 +40,7 @@ Route::middleware(['auth'])->group(function () {
 });
 //ADMIN 
 // Trang chu 
-Route::get('/admin_home', function () {
-    return view('Admin/Home');
-});
+Route::get('/admin_dashboard', [AdminDashboardController::class, 'index']);
 
 // Product routes
 Route::get('/admin_product', [ProductController::class, 'index'])->name('admin.product');
@@ -50,7 +53,26 @@ Route::get('/admin_product/{id}/view', [ProductController::class, 'view'])->name
 Route::get('/admin_dmuc', function () {
     return view('Admin/Dmuc');
 });
-
+// admin Category routes
+Route::get('/admin_Dmucadd', [CategoryController::class, 'index'])
+    ->name('admin.Dmucadd');
+Route::post('/admin_Dmucadd/store', [CategoryController::class, 'store'])
+    ->name('admin.category.store');
+Route::get('/admin_dmuc', [CategoryController::class, 'list'])
+    ->name('admin.categories');
+    // xem sản phẩm theo danh mục
+Route::get('/admin_dmuc/{id}/sanpham', [CategoryController::class, 'showProducts'])
+    ->name('admin.dmuc.products');
+// sửa danh mục
+Route::get('/admin_dmuc/{id}/edit', [CategoryController::class, 'edit'])
+    ->name('admin.category.edit');
+Route::put('/admin_dmuc/{id}', [CategoryController::class, 'update'])
+    ->name('admin.category.update');
+// xóa danh mục
+Route::delete('/admin_dmuc/{id}', [CategoryController::class, 'destroy'])
+    ->name('admin.category.destroy');
+ 
+// Admin Order routes
 Route::get('/admin_dhang', [AdminOrderController::class, 'index'])
     ->name('admin.Dhang');
 Route::delete('/admin/order/delete/{id}', [AdminOrderController::class, 'destroy']);
@@ -62,7 +84,7 @@ Route::post('/admin/order/{id}/approve', [AdminOrderController::class, 'approve'
 Route::post('/admin/order/{id}/reject', [AdminOrderController::class, 'reject']);
 //Quan lý user
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin_home', [AdminController::class, 'index']);
+    Route::get('/admin_Qlnd', [AdminController::class, 'index']);
 });
 
 

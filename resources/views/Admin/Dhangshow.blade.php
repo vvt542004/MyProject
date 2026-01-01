@@ -19,10 +19,11 @@
         </div>
 
         <main style="padding:30px;">
-            <h1>Chi tiết đơn hàng #{{ $order->id }}</h1>
+            <h1 class="CTDH">Chi tiết đơn hàng #{{ $order->id }}</h1>
 
-            <!-- ===== THÔNG TIN KHÁCH HÀNG ===== -->
-         <div class="order-info-card">
+
+<!-- ===== THÔNG TIN KHÁCH HÀNG ===== -->
+<div class="order-info-card">
     <h3>📋 Thông tin khách hàng</h3>
 
     <div class="order-info-grid">
@@ -46,6 +47,22 @@
             <strong>{{ $order->address }}</strong>
         </div>
 
+        <!-- ✅ HÌNH THỨC THANH TOÁN -->
+        <div>
+            <span>Hình thức thanh toán</span>
+            <strong>
+                @if($order->payment_method === 'cod')
+                    🚚 Thanh toán khi nhận xe (COD)
+                @elseif($order->payment_method === 'bank')
+                    🏦 Chuyển khoản ngân hàng
+                @elseif($order->payment_method === 'momo')
+                    📱 Ví MoMo
+                @else
+                    Không xác định
+                @endif
+            </strong>
+        </div>
+
         <div>
             <span>Trạng thái</span>
             @if($order->status === 'pending')
@@ -58,11 +75,12 @@
 </div>
 
 
+
             <!-- ===== DANH SÁCH SẢN PHẨM ===== -->
             <div class="order-box">
-                <h3>Sản phẩm đã mua</h3>
+                <h3 class="CTDH">Sản phẩm đã mua</h3>
 
-                <table class="table_dm">
+                <table class="table_dmm">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -87,9 +105,9 @@
                     </tbody>
                 </table>
 
-                <h3 style="text-align:right;margin-top:15px;">
+                <h3 class="CTDH" style="text-align:right;margin-top:15px;">
                     Tổng tiền:
-                    <span style="color:#e11d48;">
+                    <span style="color:#white;">
                         {{ number_format($order->total_price,0,',','.') }} VNĐ
                     </span>
                 </h3>

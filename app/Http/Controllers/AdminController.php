@@ -12,6 +12,6 @@ class AdminController extends Controller
     public function index()
     {
         $users = User::orderBy('id', 'desc')->get();
-        return view('Admin.Home', compact('users'));
+        return view('Admin.Qlnd', compact('users'));
     }
 }

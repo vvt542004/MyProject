@@ -18,7 +18,12 @@ class CheckoutController extends Controller
     if (!$cart || count($cart) == 0) {
         return redirect()->back();
     }
-
+    $request->validate([
+        'customer_name'  => 'required|string|max:255',
+        'phone'          => 'required|string|max:20',
+        'address'        => 'required|string',
+        'payment_method' => 'required|in:cod,bank,momo',
+    ]);
     // 1️⃣ TẠO ĐƠN HÀNG (PHẢI CÓ TRƯỚC)
     $order = Order::create([
         'customer_name'  => $request->customer_name,
@@ -26,7 +31,7 @@ class CheckoutController extends Controller
         'email'          => $request->email,
         'address'        => $request->address,
         'total_price'    => $request->total_price,
-        'payment_method' => 'COD',
+        'payment_method' => $request->payment_method,
         'status'         => 'pending',
     ]);
 

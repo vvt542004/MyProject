@@ -67,7 +67,7 @@ main::-webkit-scrollbar-thumb:hover {
 
 .admin_left {
     width: 350px;
-    background-color: rgb(239, 245, 74);
+    background-color: white;
     border-right: 1px solid #ccc;
 }
 
@@ -370,22 +370,202 @@ hr {
 }
 
 .table_dm th {
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid black;
     padding: 10px;
     font-size: 17px;
     font-family: 'Arial Narrow';
-    color: grey;
+    color: black;
 
 }
 
 .table_dm td {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid black;
     padding: 10px;
     font-size: 17px;
     font-family: 'Arial Narrow';
-    color: grey;
+    color: black;
 
 }
+
+.table_dmm {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+
+
+}
+
+.table_dmm th {
+    border-bottom: 2px solid white;
+    padding: 10px;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    color: white;
+
+}
+
+.table_dmm td {
+    border-bottom: 1px solid white;
+    padding: 10px;
+    font-size: 17px;
+    font-family: 'Arial Narrow';
+    color: white;
+
+}
+
+.CTDH {
+    color: white;
+}
+
+/* ===== CATEGORY CREATE ===== */
+.action-box {
+    position: relative;
+    display: inline-block;
+}
+
+.action-icon {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.action-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 6px;
+
+    min-width: 140px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+
+    display: none;
+}
+
+.action-menu a,
+.action-menu button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.action-menu a:hover,
+.action-menu button:hover {
+    background: #f3f4f6;
+}
+
+.category-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.category-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #1e293b;
+}
+
+
+
+
+/* Form */
+.category-form .form-group {
+    margin-bottom: 20px;
+}
+
+.category-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #334155;
+}
+
+.category-form input[type="text"],
+.category-form input[type="file"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.category-form input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Button */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+/* ===== TOAST SUCCESS ===== */
+#toast-success {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #22c55e;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    animation: slideIn 0.4s ease, fadeOut 0.4s ease 2.6s forwards;
+}
+
+/* Slide in */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade out */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+}
+
 
 /* FORM STYLES FOR ADD PRODUCT PAGE */
 .form-section {

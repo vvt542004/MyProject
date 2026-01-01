@@ -63,6 +63,7 @@
                             </thead>
 <tbody>
 @if(isset($orders) && count($orders) > 0)
+
 @foreach($orders as $index => $order)
 <tr>
     <td>{{ $index + 1 }}</td>
@@ -165,3 +166,4 @@
 <script src="{{ asset('backend/admin/js/style.js') }}"></script>
 </body>
 </html>
+
