@@ -33,12 +33,91 @@ class AuthController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
+        if (!Auth::attempt($credentials)) {
+            return back()->with('error', 'Sai tài khoản hoặc mật khẩu');
+        }
+
+        $user = Auth::user();
+
+        // USER thường → vào thẳng
+        if ($user->role !== 'admin') {
             return redirect('/');
         }
 
-        return back()->with('error', 'Sai tài khoản hoặc mật khẩu');
+        // ADMIN → logout tạm, chờ verify face
+        Auth::logout();
+        session(['admin_verify_user_id' => $user->id]);
+
+        return redirect()->route('admin.face.verify');
     }
+
+    /* ========== FORM XÁC THỰC KHUÔN MẶT ========== */
+    public function showVerifyFace()
+    {
+        if (!session()->has('admin_verify_user_id')) {
+            return redirect('/dangnhap');
+        }
+
+        return view('Login.verify_face');
+    }
+
+    /* ========== XỬ LÝ VERIFY FACE (JS WEBCAM) ========== */
+public function verifyFace(Request $request)
+{
+    if (!session()->has('admin_verify_user_id')) {
+        return response()->json(['status' => 'fail', 'reason' => 'no_session']);
+    }
+
+    $request->validate([
+        'image' => 'required|string'
+    ]);
+
+    $user = User::find(session('admin_verify_user_id'));
+    if (!$user) {
+        return response()->json(['status' => 'fail', 'reason' => 'no_user']);
+    }
+
+    // 1️⃣ Decode image
+    $image = preg_replace('#^data:image/\w+;base64,#i', '', $request->image);
+    $image = base64_decode($image);
+
+    $imagePath = storage_path('app/face_verify.jpg');
+    file_put_contents($imagePath, $image);
+
+    // 2️⃣ Run python
+    $python = 'D:\\Python\\python.exe';
+    $script = base_path('AI/face_recognition_attendance.py');
+
+    $cmd = "\"$python\" \"$script\" \"$imagePath\" 2>&1";
+    $raw = shell_exec($cmd);
+
+    // 3️⃣ DEBUG SAFE
+    $lines = array_filter(array_map('trim', explode("\n", $raw)));
+    $lastLine = strtolower(end($lines));
+
+    // 👉 LOG để bạn xem
+    \Log::info('FACE VERIFY RAW', [
+        'last_line' => $lastLine,
+        'raw' => $raw
+    ]);
+
+    // 4️⃣ CHECK KẾT QUẢ
+    if ($lastLine === 'admin') {
+        Auth::login($user);
+        session()->forget('admin_verify_user_id');
+
+        return response()->json([
+            'status' => 'ok',
+            'redirect' => '/'
+        ]);
+    }
+
+    session()->forget('admin_verify_user_id');
+    return response()->json([
+        'status' => 'fail',
+        'last_line' => $lastLine
+    ]);
+}
 
     /* ========== ĐĂNG XUẤT ========== */
     public function logout()

@@ -566,6 +566,17 @@ hr {
     }
 }
 
+.DM_back {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
 
 /* FORM STYLES FOR ADD PRODUCT PAGE */
 .form-section {

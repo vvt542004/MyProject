@@ -178,17 +178,8 @@
                     {{-- NÚT QUAY LẠI --}}
                      <div style="text-align: right; margin-top: 30px;">
                         <a href="{{ route('admin.product') }}"
-                           style="
-                                background: #dc3545;
-                                color: #fff !important;
-                                padding: 10px 20px;
-                                font-size: 16px;
-                                border-radius: 6px;
-                                text-decoration: none;
-                                display: inline-block;
-                                font-weight: 500;
-                           ">
-                            ← Quay lại
+                            class ="DM_back">
+                            Quay lại
                         </a>
                     </div>
 

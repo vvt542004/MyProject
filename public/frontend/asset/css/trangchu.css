@@ -395,9 +395,9 @@ body.login #toast-success {
 .user-dropdown {
     position: absolute;
     top: 52px;
-    right: 0;
+    right: 25px;
     background: #fff;
-    min-width: 160px;
+    min-width: 100px;
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     display: none;

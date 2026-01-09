@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-
+use App\Models\product;
 class CategoryController extends Controller
 {
     // Trang thêm danh mục
@@ -46,15 +46,16 @@ public function list()
 
     return view('Admin.Dmuc', compact('categories'));
 }
- // xem sản phẩm theo danh mục
-    public function showProducts($id)
-    {
-        $category = Category::findOrFail($id);
-        $products = Product::where('category_id', $id)->get();
+// xem sản phẩm theo danh mục
+ public function showProducts($id)
+{
+    // $id lúc này chính là tên dòng xe: 718, 911, Cayenne...
+    $category = Category::findOrFail($id);
 
-        return view('Admin.DmucSP', compact('category', 'products'));
-    }
+    $products = Product::where('category', $category->name)->get();
 
+    return view('Admin.DmucSP', compact('category', 'products'));
+}
     // form sửa
     public function edit($id)
     {
@@ -85,18 +86,22 @@ public function list()
     }
 
     // xóa
-    public function destroy($id)
-    {
-        // nếu còn sản phẩm thì không cho xóa
-        if (Product::where('category_id', $id)->exists()) {
-            return back()->with('error', 'Danh mục còn sản phẩm, không thể xóa');
-        }
+   public function destroy($id)
+{
+    $category = Category::findOrFail($id);
 
-        Category::findOrFail($id)->delete();
-
-        return redirect()->route('admin.categories')
-                         ->with('success', 'Đã xóa danh mục');
+    // (tuỳ chọn) xóa ảnh trong storage
+    if ($category->image && \Storage::disk('public')->exists($category->image)) {
+        \Storage::disk('public')->delete($category->image);
     }
+
+    $category->delete();
+
+    return redirect()
+        ->route('admin.categories')
+        ->with('success', 'Đã xóa danh mục thành công');
+}
+
 
 
 }

@@ -30,13 +30,12 @@
             <main>
                 <div class="admin_right_text">
                     <h1>
-                        Sản phẩm thuộc danh mục:
-                        <span style="color:#2563eb">{{ $category->name }}</span>
+                        Sản phẩm thuộc dòng xe:
+                        <span style="color:#while">{{ $category->name }}</span>
                     </h1>
                 </div>
 
                 <div class="admin_dm">
-
                     <div class="admin_dm_conten">
 
                         {{-- Thông báo --}}
@@ -64,11 +63,13 @@
 
                                     <td>{{ $product->name }}</td>
 
-                                    <td>{{ number_format($product->price) }} đ</td>
+                                    <td>
+                                        {{ $product->price_display ?? number_format($product->price_vnd, 0, ',', '.') . ' VNĐ' }}
+                                    </td>
 
                                     <td>
-                                        @if($product->image)
-                                            <img src="{{ asset('storage/'.$product->image) }}">
+                                        @if($product->main_image)
+                                            <img src="{{ asset($product->main_image) }}">
                                         @else
                                             <span>Không có ảnh</span>
                                         @endif
@@ -77,7 +78,7 @@
                             @empty
                                 <tr>
                                     <td colspan="4" style="text-align:center">
-                                        Danh mục này chưa có sản phẩm
+                                        Dòng xe này chưa có sản phẩm
                                     </td>
                                 </tr>
                             @endforelse
@@ -85,12 +86,11 @@
                         </table>
 
                         <a href="{{ route('admin.categories') }}"
-                           style="display:inline-block;margin-top:15px">
-                            ← Quay lại danh sách danh mục
+                           class ="DM_back">
+                            Quay lại 
                         </a>
 
                     </div>
-
                 </div>
             </main>
 

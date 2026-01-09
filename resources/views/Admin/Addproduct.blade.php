@@ -33,7 +33,7 @@
 
                         <!-- THÔNG TIN CƠ BẢN -->
                         <div class="form-section">
-                            <div class="form-section-title">📋 Thông Tin Cơ Bản</div>
+                            <div class="form-section-title">Thông Tin Cơ Bản</div>
 
                             <div class="form-group">
                                 <label for="name">Tên Sản Phẩm <span class="required">*</span></label>
@@ -74,7 +74,7 @@
 
                         <!-- THÔNG TIN GIÁ -->
                         <div class="form-section">
-                            <div class="form-section-title">💰 Thông Tin Giá</div>
+                            <div class="form-section-title">Thông Tin Giá</div>
 
                             <div class="form-row">
                                 <div class="form-group">
@@ -93,7 +93,7 @@
 
                         <!-- THÔNG SỐ KỸ THUẬT -->
                         <div class="form-section">
-                            <div class="form-section-title">⚙️ Thông Số Kỹ Thuật</div>
+                            <div class="form-section-title">Thông Số Kỹ Thuật</div>
 
                             <div class="form-row-3">
                                 <div class="form-group">
@@ -144,7 +144,7 @@
 
                         <!-- KÍCH THƯỚC -->
                         <div class="form-section">
-                            <div class="form-section-title">📏 Kích Thước</div>
+                            <div class="form-section-title">Kích Thước</div>
 
                             <div class="form-row">
                                 <div class="form-group">
@@ -161,7 +161,7 @@
 
                         <!-- HÌNH ẢNH -->
                         <div class="form-section">
-                            <div class="form-section-title">🖼️ Hình Ảnh</div>
+                            <div class="form-section-title">Hình Ảnh</div>
 
                             <div class="form-group">
                                 <label for="main_image">Ảnh Chính (Hình Bìa)</label>
@@ -180,7 +180,7 @@
 
                         <!-- KHOẢNG TỒN KHO & TRẠNG THÁI -->
                         <div class="form-section">
-                            <div class="form-section-title">📦 Kho & Trạng Thái</div>
+                            <div class="form-section-title">Kho & Trạng Thái</div>
 
                             <div class="form-row">
                                 <div class="form-group">
@@ -205,9 +205,9 @@
                         <!-- NÚT HÀNH ĐỘNG -->
                         <div class="form-section">
                             <div class="button-group">
-                                <button type="reset" class="btn-reset">🔄 Xóa Tất Cả</button>
-                                <a href="{{ route('admin.product') }}" class="btn btn-back">← Quay Lại</a>
-                                <button type="submit" class="btn-submit">💾 Thêm Sản Phẩm</button>
+                                <button type="reset" class="btn-reset">Xóa Tất Cả</button>
+                                <a href="{{ route('admin.product') }}" class="btn btn-back"> Quay Lại</a>
+                                <button type="submit" class="btn-submit">Thêm Sản Phẩm</button>
                             </div>
                         </div>
                     </form>

@@ -69,19 +69,20 @@
 
         <div class="action-menu">
             <a href="{{ route('admin.dmuc.products', $category->id) }}">Xem</a>
-
             <a href="{{ route('admin.category.edit', $category->id) }}">Sửa</a>
-
             <form action="{{ route('admin.category.destroy', $category->id) }}"
                   method="POST"
-                  onsubmit="return confirm('Bạn có chắc muốn xóa?')">
+                  onsubmit="return confirm('Bạn có chắc muốn xóa danh mục này?')">
                 @csrf
                 @method('DELETE')
-                <button type="submit">Xóa</button>
+                <button type="submit" style="background:none;border:none;color:red;cursor:pointer">
+                    Xóa
+                </button>
             </form>
         </div>
     </div>
 </td>
+
 
                                     </tr>
                                 @empty

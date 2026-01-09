@@ -38,6 +38,13 @@ Route::middleware(['auth'])->group(function () {
         ->name('user.profile.update');
 
 });
+Route::get('/admin/verify-face', [AuthController::class, 'showVerifyFace'])
+    ->name('admin.face.verify');
+
+Route::post('/admin/verify-face', [AuthController::class, 'verifyFace'])
+    ->name('admin.face.verify.post');
+
+
 //ADMIN 
 // Trang chu 
 Route::get('/admin_dashboard', [AdminDashboardController::class, 'index']);
@@ -61,8 +68,9 @@ Route::post('/admin_Dmucadd/store', [CategoryController::class, 'store'])
 Route::get('/admin_dmuc', [CategoryController::class, 'list'])
     ->name('admin.categories');
     // xem sản phẩm theo danh mục
-Route::get('/admin_dmuc/{id}/sanpham', [CategoryController::class, 'showProducts'])
-    ->name('admin.dmuc.products');
+Route::get('/admin_dmuc/{category}/sanpham',
+    [CategoryController::class, 'showProducts']
+)->name('admin.dmuc.products');
 // sửa danh mục
 Route::get('/admin_dmuc/{id}/edit', [CategoryController::class, 'edit'])
     ->name('admin.category.edit');
